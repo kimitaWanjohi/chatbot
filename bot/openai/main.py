@@ -1,7 +1,7 @@
-from django.conf import settings
+# from django.conf import settings
 import openai
 
-openai.api_key = settings.OPENAI_API_KEY
+openai.api_key = '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'
 
 def init_chat(prompt):
     response = openai.Completion.create(
@@ -14,4 +14,5 @@ def init_chat(prompt):
     presence_penalty=0.6,
     stop=[" Human:", " AI:"]
     )
-    return response
+    print(response["choices"][0]["text"])
+    return response["choices"][0]["text"]
