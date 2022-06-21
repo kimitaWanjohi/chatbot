@@ -15,7 +15,7 @@ class ChatBotConsumer(WebsocketConsumer):
         data = json.loads(text_data)
         message = data['message']
 
-        print(message)   
+        res = init_chat('hello')  
 
         self.send(text_data=json.dumps({
             'type': 'chat_message',
