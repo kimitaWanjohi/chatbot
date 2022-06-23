@@ -57,6 +57,15 @@
         socket.onopen = () => {
             console.log('socket open');
         }
+
+        socket.onmessage = event => {
+            var data = JSON.parse(event.data)
+        
+            switch (data.type){
+                case "chat_message":
+                    console.log(data.message)
+            }
+        }
         
         // submit if the user presses the enter key
         chatMessageInput.onkeyup = function(e) {

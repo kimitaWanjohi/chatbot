@@ -54,6 +54,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core.urls'
+CELERY_BROKER_URL = 'amqp://localhost'
 
 TEMPLATES = [
     {

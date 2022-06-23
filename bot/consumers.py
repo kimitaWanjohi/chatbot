@@ -14,10 +14,11 @@ class ChatBotConsumer(WebsocketConsumer):
     def receive(self, text_data=None, bytes_data=None):
         data = json.loads(text_data)
         message = data['message']
+        print(message)
 
-        res = init_chat('hello')  
+        res = init_chat(str(message))  
 
         self.send(text_data=json.dumps({
             'type': 'chat_message',
-            'message': "hi"
+            'message': 'res'
         }))
