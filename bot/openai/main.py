@@ -1,7 +1,7 @@
 # from django.conf import settings
 import openai
 
-openai.api_key = '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'
+openai.api_key = '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'
 
 def init_chat(prompt):
     response = openai.Completion.create(

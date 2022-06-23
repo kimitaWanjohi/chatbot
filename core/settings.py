@@ -56,6 +56,16 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'core.urls'
 CELERY_BROKER_URL = 'amqp://localhost'
 
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("localhost", 6379)],
+        },
+    },
+}
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
